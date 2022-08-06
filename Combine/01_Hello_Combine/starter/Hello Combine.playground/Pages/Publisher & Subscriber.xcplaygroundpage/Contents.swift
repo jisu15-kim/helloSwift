@@ -20,6 +20,7 @@ class MyClass {
     var property: Int = 0 {
         didSet {
             print("Did set property to \(property)")
+            print(daily)
         }
     }
 }
