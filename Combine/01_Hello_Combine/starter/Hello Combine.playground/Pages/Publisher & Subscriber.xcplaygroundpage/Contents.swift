@@ -5,6 +5,8 @@ import Combine
 
 // Publisher & Subscriber
 let just = Just(1000)
+let jason = 50
+let daily = Int.random(in: 5...30)
 let subsciption1 = just.sink { value in
     print("Received Value: \(value)")
 }
