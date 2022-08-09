@@ -4,9 +4,29 @@ import Foundation
 import Combine
 
 // Transform - Map
+let numPublisher = PassthroughSubject<Int, Never>()
+let subscription1 = numPublisher
+    .map { $0 * 2}
+    .sink { Value in
+        print("Transformed Value: \(Value)")
+    }
 
+numPublisher.send(10)
+numPublisher.send(20)
+numPublisher.send(30)
+subscription1.cancel()
 
 // Filter
+let stringPublisher = PassthroughSubject<String, Never>()
+let subscription2 = stringPublisher
+    .filter { $0.contains("a")}
+    .sink { value in
+        print("Filtered Value: \(value)")
+    }
 
+stringPublisher.send("abc")
+stringPublisher.send("Jack")
+stringPublisher.send("Joon")
+subscription2.cancel()
 
 //: [Next](@next)
