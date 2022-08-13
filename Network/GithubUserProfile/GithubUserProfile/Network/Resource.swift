@@ -14,7 +14,10 @@ struct Resource<T: Decodable> {
     var header: [String: String]
     
     var urlRequest: URLRequest? {
-        var urlComponents = URLComponents(string: base + path)!
+        guard var urlComponents = URLComponents(string: base + path) else {
+            return nil
+        }
+        print("\(urlComponents)")
         let queryItems = params.map { (key: String, value: String) in
             URLQueryItem(name: key, value: value)
         }
