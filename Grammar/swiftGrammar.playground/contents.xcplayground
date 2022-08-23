@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='01_Condition'/>
+        <page name='02_foreach'/>
+        <page name='03_enum'/>
+        <page name='04_for'/>
+        <page name='05_optional'/>
+        <page name='06_class_struct'/>
+        <page name='07_propertyObserver'/>
+        <page name='08_funcDefinition'/>
+        <page name='09_Generic'/>
+        <page name='10_closure_01'/>
+        <page name='11_closure_02'/>
+        <page name='12_init'/>
+        <page name='13_inherit'/>
+        <page name='14_Dictionary'/>
+        <page name='15_finalClass'/>
+        <page name='16_inout'/>
+        <page name='17_error'/>
+        <page name='18_structMutating'/>
+        <page name='19_set'/>
+        <page name='20_structMethod'/>
+        <page name='21_protocol'/>
+        <page name='22_protocol_inherit'/>
+        <page name='23_protocolExpend'/>
+        <page name='24_protocolAssociatedType'/>
+    </pages>
+</playground>
