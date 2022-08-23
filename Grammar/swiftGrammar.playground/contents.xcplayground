@@ -25,5 +25,7 @@
         <page name='22_protocol_inherit'/>
         <page name='23_protocolExpend'/>
         <page name='24_protocolAssociatedType'/>
+        <page name='25_typealias'/>
+        <page name='26_lazy'/>
     </pages>
 </playground>
