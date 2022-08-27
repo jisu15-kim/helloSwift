@@ -27,5 +27,14 @@
         <page name='24_protocolAssociatedType'/>
         <page name='25_typealias'/>
         <page name='26_lazy'/>
+        <page name='27_highOrderFunc'/>
+        <page name='28_HOF_sort'/>
+        <page name='29_privateSet'/>
+        <page name='30_enumerated'/>
+        <page name='31_map'/>
+        <page name='32_compactMap'/>
+        <page name='33_flatMap'/>
+        <page name='34_classFuncStaticFunc'/>
+        <page name='35_dictionaryGrouping'/>
     </pages>
 </playground>
