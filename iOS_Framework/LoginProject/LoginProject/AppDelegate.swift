@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  LoginProject
 //
-//  Created by 김지수 on 2022/09/19.
+//  Created by Allen H on 2021/12/05.
 //
 
 import UIKit
