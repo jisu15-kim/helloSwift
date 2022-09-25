@@ -12,7 +12,8 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var heightTextLabel: UITextField!
     @IBOutlet weak var weightTextLabel: UITextField!
     @IBOutlet weak var alertLabel: UILabel!
-    var bmi: Double?
+    
+    var bmiManager = BMICalculatorManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +37,11 @@ final class MainViewController: UIViewController {
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {
         let resultVC = storyboard?.instantiateViewController(withIdentifier: "resultVC") as! ResultViewController
-//        let weight = weightTextLabel.text
-//        let height = heightTextLabel.text
-//        resultVC.weight = Float(weight!)
-//        resultVC.height = Float(height!)
+
         if heightTextLabel.text == "" || weightTextLabel.text == "" {
             alertLabel.text = "키와 몸무게를 모두 입력해주세요 !"
         } else {
-            bmi = calculateBMI(height: heightTextLabel.text!, weight: weightTextLabel.text!)
-            resultVC.bmi = bmi
+            resultVC.bmi = bmiManager.getBMIResult(height: heightTextLabel.text!, weight: weightTextLabel.text!)
             present(resultVC, animated: true, completion: nil)
         }
         
@@ -53,14 +50,7 @@ final class MainViewController: UIViewController {
         weightTextLabel.text = ""
     }
     
-    func calculateBMI(height: String, weight: String) -> Double {
-        guard let h = Double(height), let w = Double(weight) else { return 0.0 }
-        var bmi = w / (h * h) * 10000
-        print("BMI 결과값(반올림 전) : \(bmi)")
-        bmi = round(bmi * 10) / 10
-        print("BMI 결과값(반올림 후): \(bmi)")
-        return bmi
-    }
+    
 }
 
 extension MainViewController: UITextFieldDelegate {

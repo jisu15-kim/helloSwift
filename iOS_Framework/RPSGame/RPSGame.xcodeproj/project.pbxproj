@@ -12,6 +12,7 @@
 		CD0B6B0328D5D282007C9C0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0B6B0228D5D282007C9C0C /* ViewController.swift */; };
 		CD0B6B0828D5D282007C9C0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0B6B0728D5D282007C9C0C /* Assets.xcassets */; };
 		CD0B6B0B28D5D282007C9C0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0B6B0928D5D282007C9C0C /* LaunchScreen.storyboard */; };
+		CD8F745628E076130000832E /* rpsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8F745528E076130000832E /* rpsManager.swift */; };
 		CDC2750A28D5E29E006E166A /* Rps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC2750928D5E29E006E166A /* Rps.swift */; };
 		CDCA001828D6BE8C0093E428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCA001628D6BE8C0093E428 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		CD0B6B0728D5D282007C9C0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD0B6B0A28D5D282007C9C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD0B6B0C28D5D282007C9C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD8F745528E076130000832E /* rpsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rpsManager.swift; sourceTree = "<group>"; };
 		CDC2750928D5E29E006E166A /* Rps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rps.swift; sourceTree = "<group>"; };
 		CDCA001728D6BE8C0093E428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,14 +62,39 @@
 			children = (
 				CD0B6AFE28D5D282007C9C0C /* AppDelegate.swift */,
 				CD0B6B0028D5D282007C9C0C /* SceneDelegate.swift */,
-				CD0B6B0228D5D282007C9C0C /* ViewController.swift */,
-				CDCA001628D6BE8C0093E428 /* Main.storyboard */,
-				CDC2750928D5E29E006E166A /* Rps.swift */,
+				CD8F745228E075C20000832E /* Models */,
+				CD8F745328E075CA0000832E /* Views */,
+				CD8F745428E075D00000832E /* Controllers */,
 				CD0B6B0728D5D282007C9C0C /* Assets.xcassets */,
 				CD0B6B0928D5D282007C9C0C /* LaunchScreen.storyboard */,
 				CD0B6B0C28D5D282007C9C0C /* Info.plist */,
 			);
 			path = RPSGame;
+			sourceTree = "<group>";
+		};
+		CD8F745228E075C20000832E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CDC2750928D5E29E006E166A /* Rps.swift */,
+				CD8F745528E076130000832E /* rpsManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD8F745328E075CA0000832E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA001628D6BE8C0093E428 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD8F745428E075D00000832E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD0B6B0228D5D282007C9C0C /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +172,7 @@
 				CDC2750A28D5E29E006E166A /* Rps.swift in Sources */,
 				CD0B6AFF28D5D282007C9C0C /* AppDelegate.swift in Sources */,
 				CD0B6B0128D5D282007C9C0C /* SceneDelegate.swift in Sources */,
+				CD8F745628E076130000832E /* rpsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
