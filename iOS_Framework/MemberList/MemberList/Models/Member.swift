@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol MemberDelegate: AnyObject { // 클래스에서만..
+    func addNewMember(_ member: Member)
+    func update(index: Int, _ member: Member)
+}
+
 struct Member {
     lazy var memberImage: UIImage? = {
         guard let name = name else {
@@ -38,6 +43,7 @@ struct Member {
         
         // 멤버를 생성할 경우, 항상 타입 저장속성의 정수값 + 1
         Member.memberNumbers += 1
+        print("\(Member.memberNumbers)")
     }
     
 }

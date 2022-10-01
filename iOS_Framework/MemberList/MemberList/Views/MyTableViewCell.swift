@@ -21,6 +21,7 @@ class MyTableViewCell: UITableViewCell {
         }
     }
 
+
     //MARK: -UI 그리기 & 세팅
     let mainImageView: UIImageView = {
         let imageView = UIImageView()
@@ -57,7 +58,6 @@ class MyTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         setupStackView()
-
     }
     
     func setupStackView() {

@@ -74,7 +74,7 @@ final class DetailView: UIView {
     let memberIdTextField: UITextField = {
         let tf = UITextField()
         tf.frame.size.height = 22
-        tf.textColor = .black
+        tf.textColor = .white
         tf.borderStyle = .roundedRect
         tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
@@ -243,7 +243,7 @@ final class DetailView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        // backgroundColor = .white
         setupStackView()
         setupNotification()
         setupMemberIdTextField()
@@ -347,8 +347,21 @@ extension DetailView: UITextFieldDelegate {
         if textField == memberIdTextField {
             return false
         }
-        
+                
         // 나머지 텍스트필드는 관계없이 설정 가능
+        return true
+    }
+    
+    
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        print("DidChangeSelection - \(textField)")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let vc = DetailViewController()
+        vc.saveButtonTapped()
+        print(#function)
         return true
     }
 }

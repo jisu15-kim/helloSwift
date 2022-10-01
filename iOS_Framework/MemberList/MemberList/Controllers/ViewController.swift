@@ -13,6 +13,11 @@ final class ViewController: UIViewController {
     private let tableView = UITableView()
     var memberListManager = MemberListManager()
     
+    lazy var addButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -56,6 +61,14 @@ final class ViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        self.navigationItem.rightBarButtonItem = self.addButton
+    }
+    
+    @objc func plusButtonTapped() {
+        print("Plus 버튼 눌림")
+        let vc = DetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -77,10 +90,29 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let detailVC = DetailViewController()
         let detailVC = DetailViewController()
+
         let array = memberListManager.getMemberList()
         detailVC.member = array[indexPath.row]
         
+        detailVC.delegate = self
+        
         navigationController?.pushViewController(detailVC, animated: true)
     }
+}
+
+extension ViewController: MemberDelegate {
+    func addNewMember(_ member: Member) {
+        memberListManager.makeNewMember(member)
+        setupDatas()
+        tableView.reloadData()
+    }
+    
+    func update(index: Int, _ member: Member) {
+        memberListManager.updateMemberInfo(index: index, member)
+        tableView.reloadData()
+    }
+    
+    
 }
