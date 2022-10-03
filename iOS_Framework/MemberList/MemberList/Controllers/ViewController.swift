@@ -69,6 +69,7 @@ final class ViewController: UIViewController {
         print("Plus 버튼 눌림")
         let vc = DetailViewController()
         navigationController?.pushViewController(vc, animated: true)
+        vc.delegate = self
     }
 }
 
@@ -105,7 +106,6 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: MemberDelegate {
     func addNewMember(_ member: Member) {
         memberListManager.makeNewMember(member)
-        setupDatas()
         tableView.reloadData()
     }
     

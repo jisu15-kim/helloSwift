@@ -71,7 +71,7 @@ final class DetailViewController: UIViewController {
             let age = Int(detailView.ageTextField.text ?? "")
             // 새 멤버 생성
             var newMember = Member(name: name, age: age, phone: phone, address: address)
-            newMember.memberImage = detailView.mainImageView.image
+//            newMember.memberImage = detailView.mainImageView.image
             delegate?.addNewMember(newMember)
             
         } else {
